@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda Admin</title>
+  <link rel="stylesheet" href="css/beranda_admin.css" />
+
+  <!-- Panggil file sidebar -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("sidebar_admin.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("sidebar").innerHTML = data;
+        });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Konten utama -->
+    <main class="main-content">
+      <h1 class="page-title">Sistem Workingpaper Teknik Industri</h1>
+
+      <div class="chart-container">
+        <div class="chart-card">
+          <h3>Statistik Jurnal dan Workingpaper</h3>
+          <canvas id="chartPie"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Statistik Pengunjung</h3>
+          <canvas id="chartLine"></canvas>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // PIE CHART
+    const ctxPie = document.getElementById("chartPie");
+    new Chart(ctxPie, {
+      type: "pie",
+      data: {
+        labels: ["Jurnal", "Artikel", "Workingpaper"],
+        datasets: [{
+          data: [45, 30, 25],
+          backgroundColor: ["#4285F4", "#FFA726", "#E91E63"],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: "top",
+            labels: { boxWidth: 20, font: { size: 13 } }
+          }
+        }
+      }
+    });
+
+    // LINE CHART
+    const ctxLine = document.getElementById("chartLine");
+    new Chart(ctxLine, {
+      type: "line",
+      data: {
+        labels: ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"],
+        datasets: [{
+          label: "Pengunjung",
+          data: [1000, 1600, 1200, 2400, 2000, 2500, 1800, 1600, 1400, 2100, 2700, 3000],
+          borderColor: "#3B82F6",
+          backgroundColor: "rgba(59,130,246,0.15)",
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 500 } }
+        }
+      }
+    });
+  </script>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

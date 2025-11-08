@@ -1,0 +1,80 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff;
+}
+
+.main-content {
+  margin-left: 250px; /* untuk memberi ruang sidebar */
+  padding: 30px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.biodata-section {
+  flex: 1;
+}
+
+.biodata-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.biodata-buttons button {
+  padding: 8px 20px;
+  border: 2px solid #ffcc00;
+  border-radius: 20px;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.biodata-buttons .active {
+  background-color: #ffcc00;
+}
+
+.biodata-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff8e1;
+  text-align: center;
+}
+
+.biodata-card img {
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.statistik-section {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+canvas {
+  width: 250px !important;
+  height: 250px !important;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  font-weight: 600;
+}

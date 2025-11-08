@@ -1,0 +1,181 @@
+/* === RESET DASAR === */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+}
+
+/* === LAYOUT UTAMA === */
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* === SIDEBAR === */
+#sidebar {
+  width: 200px;
+  background-color: #ffff;
+  flex-shrink: 0;
+}
+
+/* === AREA KONTEN === */
+.main-content {
+  flex: 1;
+  background-color: #fff;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+/* Hilangkan semua kemungkinan radius di area luar */
+.layout,
+.main-content,
+.main-content::before,
+.main-content::after {
+  border-radius: 0 !important;
+}
+
+/* === JUDUL HALAMAN === */
+.page-title {
+  text-align: left;           
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #000;
+}
+
+/* === TABEL === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #ffcc00;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+}
+
+tr:last-child td {
+  border-bottom: none; /* Hilangkan garis di bawah baris terakhir */
+}
+
+/* === JUDUL DENGAN GAMBAR === */
+.judul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.judul img {
+  height: 1.2em;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* === SELECT INDEKSASI === */
+.select-index {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  width: 150px;
+}
+
+/* === STATUS === */
+.status {
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.approved {
+  background: #7cff55;
+  color: #000;
+}
+
+.rejected {
+  background: #ff4444;
+  color: #fff;
+}
+
+/* === TOMBOL REVIEW === */
+.review-btn {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.review-btn:hover {
+  background-color: #ffcc00;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+/* === RESPONSIF === */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .select-index {
+    width: 120px;
+  }
+
+  .review-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .page-title {
+    font-size: 22px;
+    text-align: center;
+  }
+}

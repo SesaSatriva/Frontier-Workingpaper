@@ -1,0 +1,68 @@
+  <!DOCTYPE html>
+  <html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsip Workingpaper - Teknik Industri</title>
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/arsip.css">
+  </head>
+  <body>
+    
+    <div id="sidebar"></div>
+
+    <div class="layout">
+      <main class="content">
+        <h1>Sistem Workingpaper Teknik Industri</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Status</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><span class="status approved">Approved</span></td>
+              <td><button class="btn-detail" onclick="window.location.href='arsip_detail_workingpaper_mahasiswa.html'">🔍</button></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><span class="status published">Published</span></td>
+              <td><button class="btn-detail" onclick="window.location.href='arsip_detail_workingpaper_mahasiswa.html'">🔍</button></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><span class="status rejected">Rejected</span></td>
+              <td><button class="btn-detail" onclick="window.location.href='arsip_detail_workingpaper_mahasiswa.html'">🔍</button></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><span class="status rejected">Rejected</span></td>
+              <td><button class="btn-detail" onclick="window.location.href='arsip_detail_workingpaper_mahasiswa.html'">🔍</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+
+    <script>
+      fetch("sidebar_mahasiswa.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("sidebar").innerHTML = data;
+        });
+    </script>
+    <style>
+      #sidebar ul {
+        list-style: none !important;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+
+  </body>
+  </html>

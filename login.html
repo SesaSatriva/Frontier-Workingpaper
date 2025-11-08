@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Workingpaper Teknik Industri</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="login-container">
+    <h2 class="login-title">Login</h2>
+
+    <form class="login-box">
+      <div class="input-group">
+       <img src="logo_dan_gambar/At Sign.png">
+        <input type="email" placeholder="Email">
+      </div>
+
+      <div class="input-group">
+        <label><i>🔒</i></label>
+        <input type="password" placeholder="Password">
+      </div>
+
+      <a href="#" class="forgot">Lupa Password?</a>
+
+      <select class="role-select" id="role-select">
+        <option value="mahasiswa">Login Mahasiswa</option>
+        <option value="dosen">Login Dosen</option>
+        <option value="admin">Login Admin</option>
+      </select>
+
+      <button type="button" class="login-btn" onclick="redirectDashboard()">Login</button>
+
+        <script>
+          function redirectDashboard() {
+            const role = document.getElementById("role-select").value;
+
+            if (role === "mahasiswa") {
+              window.location.href = "beranda_mahasiswa.html";
+            } else if (role === "dosen") {
+              window.location.href = "beranda_dosen.html";
+            } else if (role === "admin") {
+              window.location.href = "beranda_admin.html";
+            }
+          }
+        </script>
+
+      <p class="bottom-text">Don't have account? <a href="register.html">Register here</a></p>
+    </form>
+  </div>
+
+  <script>
+    // Memanggil header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+</body>
+</html>

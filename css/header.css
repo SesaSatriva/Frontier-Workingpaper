@@ -1,0 +1,105 @@
+/* HEADER */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffcc00;
+  height: 70px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+/* LOGO CONTAINER */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LOGO */
+.logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* LOGO TEXT */
+.logo-text h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.logo-text p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* MENU UTAMA */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* jarak antar menu */
+}
+
+/* MENU ITEM */
+.menu-item {
+  display: flex;
+  flex-direction: column; /* ikon di atas teks */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.menu-item:hover {
+  color: #333;
+  transform: translateY(-2px);
+}
+
+/* MENU ICON */
+.menu-icon {
+  height: 1.3em; /* proporsional terhadap teks */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 3px; /* jarak kecil ke teks */
+}
+
+/* MENU AKTIF */
+.menu-item.active {
+  color: #222;
+  font-weight: 600;
+  border-bottom: 2px solid #222; /* tanda aktif */
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #f0f0f0;
+}

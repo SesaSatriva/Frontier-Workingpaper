@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Wrapper utama */
+.wrapper {
+  display: flex;
+}
+
+/* Konten utama */
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  margin-left: 220px; /* jarak dari sidebar */
+}
+
+/* Judul besar */
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* Tabel */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #ffcc00;
+  font-weight: 700;
+  font-size: 16px;
+}
+table td:first-child {
+  text-align: left;
+  padding-left: 25px;
+}
+/* === JUDUL DENGAN GAMBAR === */
+.judul {
+  display: flex;
+  align-items: center;     /* sejajarkan gambar dan teks di tengah vertikal */
+  gap: 10px;               /* jarak antara gambar dan teks */
+}
+
+.judul img {
+  height: 1.2em;           /* tinggi gambar mengikuti ukuran teks */
+  width: auto;             /* lebar otomatis proporsional */
+  object-fit: contain;     /* jaga proporsi gambar */
+  vertical-align: middle;  /* tambahan agar rapi di dalam flex */
+}
+
+.judul span {
+  font-size: 16px;         /* ubah sesuai kebutuhan */
+  line-height: 1.4;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #ffcc00;
+}
+
+/* Input Jurnal */
+.jurnal-input {
+  display: none;
+  margin-top: 8px;
+  width: 160px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Tombol kirim */
+.icon-btn {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .jurnal-input {
+    width: 120px;
+  }
+}

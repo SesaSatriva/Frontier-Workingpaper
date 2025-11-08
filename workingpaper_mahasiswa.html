@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workingpaper Teknik Industri</title>
+  <link rel="stylesheet" href="css/workingpaper.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="content">
+    <div class="tabs">
+      <button class="tab"><a href="jurnal.html">Jurnal</a></button>
+      <button class="tab active">Workingpaper</button>
+    </div>
+
+    <div class="paper-list">
+      <div class="paper-card">
+        <img src="logo_dan_gambar/coverwp.jpg" alt="Cover">
+        <div class="info">
+          <h3>JUDUL WORKINGPAPER</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>ID: xxxxxxxxxxx</p>
+          <p>Volume: xx</p>
+          <button class="view-btn">View</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+</body>
+</html>

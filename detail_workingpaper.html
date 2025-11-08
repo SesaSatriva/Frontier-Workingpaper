@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Workingpaper - Teknik Industri</title>
+  <link rel="stylesheet" href="css/detail_workingpaper.css">
+
+  <!-- Panggil header -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        });
+    });
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- KONTEN UTAMA -->
+  <main class="main-content">
+    <section class="workingpaper-header">
+      <img src="logo_dan_gambar/coverwp.jpg" alt="Cover Workingpaper" class="cover-workingpaper">
+
+      <div class="workingpaper-info">
+        <h1>Judul workingpaper</h1>
+        <p><strong>Published date:</strong> dd/mm/yyyy</p>
+        <p><strong>E-ISBN:</strong> xxxxxxxxxx</p>
+
+        <h3>Abstract</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium turpis odio, ut fermentum magna vehicula sodales. 
+          Suspendisse auctor, metus eget vehicula sagittis, ipsum dui pretium augue, at semper magna ligula ac dui. 
+          Quisque faucibus, magna et condimentum tempus, sem arcu convallis ante, quis consectetur ipsum nunc varius neque. 
+          Duis eu sapien sed mauris feugiat cursus. Ut ornare mi rutrum dapibus mattis. Suspendisse sit amet ligula ut ligula tincidunt fringilla.
+        </p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ARTIKEL -->
+    <section class="artikel-section">
+      <h2>Artikel</h2>
+      <div class="artikel-card">
+        <div class="artikel-info">
+          <h3>Judul artikel</h3>
+          <p>Penulis artikel 1, penulis artikel 2, penulis artikel 3</p>
+          <p><strong>Abstract view:</strong> xxx</p>
+        </div>
+        <div class="artikel-meta">
+          <a href="logo_dan_gambar/SRS FRONTIER.pdf" target="_blank" class="pdf-btn"><img src="logo_dan_gambar/document.png">file</a>
+          <span>102–103</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDEKSASI -->
+    <section class="indeks-section">
+      <h2>Indeksasi</h2>
+      <div class="indeks-container">
+        <img src="img/sinta.png" alt="Sinta">
+        <img src="img/proquest.png" alt="ProQuest">
+        <img src="img/dimensions.png" alt="Dimensions">
+        <img src="img/doaj.png" alt="DOAJ">
+        <img src="img/worldcat.png" alt="WorldCat">
+        <img src="img/indexcopernicus.png" alt="Index Copernicus">
+        <img src="img/ebscohost.png" alt="EBSCOhost">
+        <img src="img/googlescholar.png" alt="Google Scholar">
+        <img src="img/aseancitation.png" alt="Asean Citation Index">
+      </div>
+    </section>
+
+    <!-- KEMBALI -->
+    <a href="workingpaper_page.html" class="back-btn">← Kembali</a>
+  </main>
+
+</body>
+</html>

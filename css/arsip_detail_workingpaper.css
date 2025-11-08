@@ -1,0 +1,109 @@
+/* Sidebar */
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Layout Utama */
+/* Layout Utama */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Pastikan sidebar posisinya tetap di kiri */
+#sidebar {
+  flex-shrink: 0;
+}
+
+/* Konten utama diberi jarak dari sidebar */
+main.content {
+  flex: 1;
+  padding: 20px 40px;
+  margin-left: 200px; /* supaya tidak menabrak sidebar */
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Section */
+.form-section {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+textarea[readonly] {
+  background-color: #f7f7f7;
+  color: #555;
+}
+
+/* Tombol Lihat File */
+.file-btn {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+}
+
+.file-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Status */
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.status.rejected {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+/* Tombol Submit */
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}

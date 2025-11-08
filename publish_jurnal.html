@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publish Jurnal dan Workingpaper</title>
+  <link rel="stylesheet" href="css/publish_jurnal.css">
+
+  <style>
+    /* Pastikan input jurnal tersembunyi secara default (publish_jurnal.css sudah punya, tapi jaga cadangan) */
+    .jurnal-input {
+      display: none;
+    }
+
+    /* Gaya kecil untuk judul agar ikon mengikuti ukuran teks */
+    .judul {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .judul img {
+      height: 1.2em;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* reset list sidebar jika dimasukkan via fetch */
+    #sidebar ul { list-style: none !important; padding: 0; margin: 0; }
+  </style>
+
+  <script>
+    // JS: men-setup interaksi checkbox per baris
+    document.addEventListener('DOMContentLoaded', () => {
+      // Memuat sidebar (tetap seperti semula)
+      fetch("sidebar_admin.html")
+        .then(res => res.text())
+        .then(data => {
+          const sb = document.getElementById("sidebar");
+          if (sb) sb.innerHTML = data;
+        })
+        .catch(() => { /* silent fail */ });
+
+      // Ambil semua baris pada tbody
+      const rows = document.querySelectorAll('table tbody tr');
+
+      rows.forEach(row => {
+        const workingCheckbox = row.querySelector('.checkbox-working');
+        const jurnalCheckbox  = row.querySelector('.checkbox-jurnal');
+        const jurnalInput     = row.querySelector('.jurnal-input');
+
+        // Helper: sembunyikan jurnal input
+        const hideJurnal = () => {
+          if (jurnalInput) jurnalInput.style.display = 'none';
+        };
+
+        // Helper: tampilkan jurnal input dan fokus
+        const showJurnal = () => {
+          if (jurnalInput) {
+            jurnalInput.style.display = 'inline-block';
+            jurnalInput.focus();
+          }
+        };
+
+        // Jika awalnya checked (jarang), sinkronkan tampilan
+        if (jurnalCheckbox && jurnalCheckbox.checked) {
+          showJurnal();
+        } else {
+          hideJurnal();
+        }
+
+        // Event ketika checkbox working diklik
+        if (workingCheckbox) {
+          workingCheckbox.addEventListener('change', () => {
+            if (workingCheckbox.checked) {
+              // pastikan jurnal tidak tercentang & input disembunyikan
+              if (jurnalCheckbox) {
+                jurnalCheckbox.checked = false;
+                hideJurnal();
+              }
+            }
+            // jika uncheck working tidak perlu melakukan apa-apa lagi
+          });
+        }
+
+        // Event ketika checkbox jurnal diklik
+        if (jurnalCheckbox) {
+          jurnalCheckbox.addEventListener('change', () => {
+            if (jurnalCheckbox.checked) {
+              // pastikan working tidak tercentang
+              if (workingCheckbox) workingCheckbox.checked = false;
+              showJurnal();
+            } else {
+              hideJurnal();
+            }
+          });
+        }
+      });
+    });
+
+    // (Optional) fungsi yang dapat dipanggil inline jika mau:
+    // toggleCheckbox(this) => mencari jurnal-input di parent td
+    function toggleCheckbox(el) {
+      // el bisa menjadi checkbox; cari parent td lalu jurnal-input di sana
+      const td = el.closest('td');
+      if (!td) return;
+      const jurnalInput = td.querySelector('.jurnal-input');
+      if (!jurnalInput) return;
+      jurnalInput.style.display = el.checked ? 'inline-block' : 'none';
+
+      // jika checked jurnal, uncheck working di baris yang sama
+      if (el.classList && el.classList.contains('checkbox-jurnal') && el.checked) {
+        const row = el.closest('tr');
+        const working = row ? row.querySelector('.checkbox-working') : null;
+        if (working) working.checked = false;
+        jurnalInput.focus();
+      }
+      // jika checked working, uncheck jurnal dan sembunyikan input
+      if (el.classList && el.classList.contains('checkbox-working') && el.checked) {
+        const row = el.closest('tr');
+        const jurnal = row ? row.querySelector('.checkbox-jurnal') : null;
+        const jurnalInputRow = row ? row.querySelector('.jurnal-input') : null;
+        if (jurnal) jurnal.checked = false;
+        if (jurnalInputRow) jurnalInputRow.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Konten Utama -->
+    <main class="main-content">
+      <h1 class="page-title">Sistem Workingpaper Teknik Industri</h1>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Workingpaper</th>
+              <th>Jurnal</th>
+              <th>Submit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="judul">
+                <img src="logo_dan_gambar/document.png" alt="ikon arsip">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-working" onclick="toggleCheckbox(this)">
+              </td>
+              <td>
+                <input type="checkbox" class="checkbox-jurnal" onclick="toggleCheckbox(this)">
+                <input type="text" class="jurnal-input" placeholder="Judul jurnal...">
+              </td>
+              <td>
+                <a href="#">
+                  <img src="logo_dan_gambar/forward_button.png" class="icon-btn" alt="Submit">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

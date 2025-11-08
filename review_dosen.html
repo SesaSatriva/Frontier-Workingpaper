@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Workingpaper | Dosen</title>
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/review_dosen.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Konten utama -->
+  <div class="content">
+    <h1>Sistem Workingpaper Teknik Industri</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Judul</th>
+          <th>Status</th>
+          <th>Review</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a href="review_detail.html" class="doc-title">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+          </td>
+          <td><span class="status approved">Approved</span></td>
+          <td><button class="review-btn" onclick="openReview(1)">🔍</button></td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#" class="doc-title">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+          </td>
+          <td><span class="status published">Published</span></td>
+          <td><button class="review-btn" onclick="openReview(2)">🔍</button></td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#" class="doc-title">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+          </td>
+          <td><span class="status updated">Updated</span></td>
+          <td><button class="review-btn" onclick="openReview(3)">🔍</button></td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#" class="doc-title">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+          </td>
+          <td><span class="status rejected">Rejected</span></td>
+          <td><button class="review-btn" onclick="openReview(4)">🔍</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Memanggil sidebar_dosen.html
+    fetch('sidebar_dosen.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+      });
+
+    // Fungsi klik tombol review
+    function openReview(id) {
+      // arahkan ke halaman detail review sesuai ID
+      window.location.href = `review_detail.html?id=${id}`;
+    }
+  </script>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

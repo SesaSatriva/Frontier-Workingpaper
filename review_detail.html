@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Review | Dosen</title>
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/review_detail.css" />
+</head>
+<body>
+  <div class="container">
+
+  <div id="sidebar"></div>
+
+  <!-- Konten utama -->
+  <main class="content">
+    <h1>Sistem Workingpaper Teknik Industri</h1>
+    <h2 id="judul">Judul Workingpaper</h2>
+
+    <section class="form-section">
+      <label>Abstract</label>
+      <textarea id="abstract" readonly></textarea>
+    </section>
+
+    <section class="form-section">
+      <label>Afiliasi</label>
+      <textarea id="afliasi" readonly></textarea>
+    </section>
+
+    <section class="form-section">
+      <label>Referensi</label>
+      <textarea id="referensi" readonly></textarea>
+    </section>
+
+    <section class="form-section">
+      <label>File</label>
+      <button id="file-btn" class="file-btn">📄 Lihat File</button>
+    </section>
+
+    <section class="form-section">
+      <label>Komentar</label>
+      <textarea id="komentar" placeholder="Masukkan komentar Anda di sini..."></textarea>
+    </section>
+
+    <section class="approval-section">
+      <p>Approval Artikel</p>
+      <label><input type="radio" name="approval" value="approve"> Approve</label><br>
+      <label><input type="radio" name="approval" value="reject"> Reject</label>
+    </section>
+
+    <button class="submit-btn" id="submitBtn">✔ Submit</button>
+  </main>
+  </div>
+  <script>
+    // --- LOAD SIDEBAR ---
+    fetch("sidebar_dosen.html")
+      .then((res) => res.text())
+      .then((html) => (document.getElementById("sidebar").innerHTML = html));
+
+    // --- DATA DUMMY UNTUK CONTOH ---
+    const dataPaper = {
+      1: {
+        judul: "Judul : Analisis Efisiensi Produksi Menggunakan Metode Lean Manufacturing",
+        abstract: "Penelitian ini bertujuan untuk menganalisis efisiensi lini produksi pada industri manufaktur...",
+        afliasi: "Departemen Teknik Industri - Universitas Contoh",
+        referensi: "Smith, J. (2023). Industrial Engineering Optimization.",
+        file: "logo_dan_gambar/SRS FRONTIER.pdf",
+      },
+      2: {
+        judul: "Optimasi Rantai Pasok Menggunakan Metode EOQ Multi Level",
+        abstract: "Paper ini membahas penerapan EOQ pada rantai pasok bahan baku...",
+        afliasi: "Teknik Industri - Universitas Inovasi",
+        referensi: "Jones, M. (2022). Supply Chain Management Strategy.",
+        file: "file_paper2.pdf",
+      },
+    };
+
+    // --- TAMPILKAN DATA BERDASARKAN PARAMETER ID ---
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id") || "1";
+    const paper = dataPaper[id];
+
+    if (paper) {
+      document.getElementById("judul").innerText = paper.judul;
+      document.getElementById("abstract").value = paper.abstract;
+      document.getElementById("afliasi").value = paper.afliasi;
+      document.getElementById("referensi").value = paper.referensi;
+      document.getElementById("file-btn").onclick = () => window.open(paper.file, "_blank");
+    }
+
+    // --- SUBMIT ---
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      const komentar = document.getElementById("komentar").value.trim();
+      const approval = document.querySelector("input[name='approval']:checked");
+
+      if (!komentar) {
+        alert("Silakan isi komentar terlebih dahulu!");
+        return;
+      }
+      if (!approval) {
+        alert("Silakan pilih Approve atau Reject terlebih dahulu!");
+        return;
+      }
+
+      alert(`Review berhasil dikirim!\nStatus: ${approval.value.toUpperCase()}\nKomentar: ${komentar}`);
+      window.location.href = "review_workingpaper.html";
+    });
+  </script>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

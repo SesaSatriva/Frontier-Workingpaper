@@ -1,0 +1,83 @@
+.sidebar {
+  background-color: #ffcc00;
+  width: 230px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Profil bagian atas */
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Menu utama */
+.menu-item {
+  display: flex;               /* Biar gambar dan teks sejajar horizontal */
+  align-items: center;         /* Rata tengah vertikal */
+  gap: 10px;                   /* Jarak antara gambar dan teks */
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.menu-item img {
+  width: 20px;                 /* Ukuran ikon menyesuaikan */
+  height: 20px;
+  object-fit: contain;         /* Menjaga proporsi gambar */
+}
+
+.menu-item:hover {
+  background-color: #fff5cc;
+}
+
+.menu-item.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+
+/* Tombol logout di ujung bawah */
+.logout {
+  position: absolute;
+  bottom: 20px; /* benar-benar menempel di bawah */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4d4d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #e63939;
+}
+
+.logout a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Hapus .logout-container karena tidak diperlukan */

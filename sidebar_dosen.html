@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="css/sidebar.css">
+<div class="sidebar">
+  <div class="profile">
+    <img src="logo_dan_gambar/fotodosen.jpg" alt="Foto Profil">
+    <h3>Dosen</h3>
+    <p>9238123812379231</p>
+  </div>
+
+  <ul class="menu">
+    <li><a href="beranda_dosen.html" class="menu-item">
+      <img src="logo_dan_gambar/homepage.png"> 
+      Beranda</a>
+    </li>
+    <li><a href="profil_dosen.html" class="menu-item">
+      <img src="logo_dan_gambar/profile.png">
+      Profil</a>
+    </li>
+    <li><a href="upload_dosen.html" class="menu-item">
+      <img src="logo_dan_gambar/update.png">
+      Upload Workingpaper</a>
+    </li>
+    <li><a href="arsip_dosen.html" class="menu-item">
+      <img src="logo_dan_gambar/arsip.png">
+      Arsip Workingpaper</a>
+    </li>
+    <li><a href="review_dosen.html" class="menu-item">
+      <img src="logo_dan_gambar/review.png">
+      Review Workingpaper</a>
+    </li>
+  </ul>
+      
+    <button class="logout">
+      <a href="login.html">Logout</a>
+    </button>
+</div>
+
+<script>
+  // Tunggu sampai elemen di-load
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    menuItems.forEach(item => {
+      const linkPage = item.getAttribute("href").split("/").pop();
+      if (linkPage === currentPage) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  });
+</script>

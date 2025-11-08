@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Jurnal - Workingpaper Teknik Industri</title>
+  <link rel="stylesheet" href="css/detail_jurnal.css">
+
+  <!-- panggil header -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        });
+    });
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- KONTEN UTAMA -->
+  <main class="main-content">
+    <section class="jurnal-header">
+      <img src="logo_dan_gambar/coverjurnal.jpg" alt="Cover Jurnal" class="cover-jurnal">
+
+      <div class="jurnal-info">
+        <h1>Judul Jurnal</h1>
+        <p><strong>Published Date:</strong> dd/mm/yyyy</p>
+        <p><strong>E-ISSN:</strong> xxxxxxxx</p>
+        <p><strong>Volume:</strong> xxx</p>
+
+        <h3>About Jurnal</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ligula odio,
+          ut fermentum magna vehicula accumsan. Quisque scelerisque orci ligula, vitae facilisis ligula
+          suscipit non. Suspendisse ac odio nec lorem varius faucibus.
+        </p>
+      </div>
+    </section>
+
+     <hr>
+      <section class="artikel-section">
+        <h2>Artikel</h2>
+  
+      </section>
+
+
+      <div class="artikel-card">
+        <div class="artikel-info">
+          <h3>Judul artikel 1</h3>
+          <p>Penulis artikel 1, penulis artikel 2, penulis artikel 3</p>
+          <p><strong>Abstract view:</strong> xxx</p>
+        </div>
+        <div class="artikel-meta">
+          <a href="logo_dan_gambar/SRS FRONTIER.pdf" target="_blank" class="pdf-btn"><img src="logo_dan_gambar/document.png" alt="PDF">file</a>
+          <span>102–103</span>
+        </div>
+      </div>
+
+      <div class="artikel-card">
+        <div class="artikel-info">
+          <h3>Judul artikel 2</h3>
+          <p>Penulis artikel 1, penulis artikel 2, penulis artikel 3</p>
+          <p><strong>Abstract view:</strong> xxx</p>
+        </div>
+        <div class="artikel-meta">
+          <a href="logo_dan_gambar/SRS FRONTIER.pdf" target="_blank" class="pdf-btn"><img src="logo_dan_gambar/document.png" alt="PDF">file</a>
+          <span>104–107</span>
+        </div>
+      </div>
+
+      <div class="artikel-card">
+        <div class="artikel-info">
+          <h3>Judul artikel 3</h3>
+          <p>Penulis artikel 1, penulis artikel 2, penulis artikel 3</p>
+          <p><strong>Abstract view:</strong> xxx</p>
+        </div>
+        <div class="artikel-meta">
+          <a href="logo_dan_gambar/SRS FRONTIER.pdf" target="_blank" class="pdf-btn"><img src="logo_dan_gambar/document.png" alt="PDF">file</a>
+          <span>108–110</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDEKSASI -->
+    <section class="indeks-section">
+      <h2>Indeksasi</h2>
+      <div class="indeks-container">
+        <img src="sinta.png" alt="Sinta">
+        <img src="doaj.png" alt="DOAJ">
+        <img src="proquest.png" alt="ProQuest">
+        <img src="worldcat.png" alt="WorldCat">
+        <img src="google-scholar.png" alt="Google Scholar">
+        <img src="dimensions.png" alt="Dimensions">
+        <img src="crossref.png" alt="CrossRef">
+        <img src="onesearch.png" alt="Indonesia OneSearch">
+        <img src="ebscohost.png" alt="EBSCOhost">
+      </div>
+    </section>
+
+    <a href="jurnal.html" class="back-btn">← Kembali</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Reviewer - Sistem Workingpaper</title>
+  <link rel="stylesheet" href="css/tugas_reviewer.css">
+
+  <!-- Panggil sidebar -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("sidebar_admin.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("sidebar").innerHTML = data;
+        });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Konten utama -->
+    <main class="main-content">
+      <h1 class="page-title">Sistem Workingpaper Teknik Industri</h1>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Penulis</th>
+              <th>Reviewer</th>
+              <th>Submit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td class="judul"><img src="logo_dan_gambar/document.png"> ipsum dolor sit amet, consectetur adipiscing</td>
+              <td>Lorem ipsum</td>
+              <td><input type="text" placeholder="Lorem ipsum" class="reviewer-input"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

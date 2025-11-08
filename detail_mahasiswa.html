@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa</title>
+
+  <!-- Panggil file CSS -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/detail_mahasiswa.css">
+</head>
+<body>
+  
+  <!-- Panggil file header -->
+  <div id="header"></div>
+
+  <main class="profile-container">
+    <section class="profile-header">
+      <img src="logo_dan_gambar/fotomahasiswa.JPG" alt="Foto Mahasiswa" class="profile-img">
+      <div class="profile-info">
+        <h2>NAMA MAHASISWA</h2>
+        <p><strong>NIM:</strong> 2301220211</p>
+        <p><strong>Angkatan:</strong> 2023</p>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Judul karya</th>
+            <th>Tahun</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2023</td>
+            <td>
+              <a href="detail_jurnal.html">
+              <button class="btn-detail">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+              </button>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2023</td>
+            <td>
+              <a href="detail_jurnal.html">
+              <button class="btn-detail">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+              </button>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2024</td>
+            <td>
+              <a href="detail_jurnal.html">
+              <button class="btn-detail">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+              </button>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2025</td>
+            <td>
+              <a href="detail_jurnal.html">
+              <button class="btn-detail">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+              </button>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Script untuk memanggil header -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa</title>
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/profil.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar dari file headermahasiswa.html -->
+    <div id="sidebar"></div>
+
+    <!-- Konten utama -->
+    <main class="main-content">
+      <h1>Profil</h1>
+      <div class="foto-profil">
+        <img src="logo_dan_gambar/fotodosen.jpg" alt="Foto Profil" class="foto">
+      </div>
+
+      <table class="data-profil">
+        <tr>
+          <td><strong>Nama</strong></td>
+          <td>:</td>
+          <td>M Lathif Ramadhani</td>
+        </tr>
+        <tr>
+          <td><strong>NIP</strong></td>
+          <td>:</td>
+          <td>8719237891</td>
+        </tr>
+        <tr>
+          <td><strong>Bidang keahlian</strong></td>
+          <td>:</td>
+          <td>Sistem informasi ERP</td>
+        </tr>
+      </table>
+
+      <button class="edit-btn">Ubah data</buttoWn>
+    </main>
+  </div>
+
+  <!-- Script untuk memanggil sidebar -->
+  <script>
+    fetch('sidebar_dosen.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+      });
+  </script>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

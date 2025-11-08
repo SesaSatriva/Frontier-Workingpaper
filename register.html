@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi - Workingpaper Teknik Industri</title>
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="register-container">
+    <h2 class="register-title">Registrasi</h2>
+
+    <form class="register-box">
+      <div class="input-group">
+        <label><i>@</i></label>
+        <input type="email" placeholder="Email" required>
+      </div>
+
+      <div class="input-group">
+        <label><i>🔒</i></label>
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <select class="role-select">
+        <option>Registrasi Mahasiswa</option>
+        <option>Registrasi Dosen</option>
+        <option>Registrasi Admin</option>
+      </select>
+
+      <button type="submit" class="register-btn">Registrasi</button>
+
+      <p class="bottom-text">Already have account? <a href="login.html">Login here</a></p>
+    </form>
+  </div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+  </script>
+</body>
+</html>

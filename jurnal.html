@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jurnal - Teknik Industri</title>
+  <link rel="stylesheet" href="css/publication.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="content">
+    <nav class="tabs" role="tablist">
+      <a class="tab active" href="jurnal.html" aria-current="page">Jurnal</a>
+      <a class="tab" href="workingpaper_page.html">Workingpaper</a>
+    </nav>
+
+    <div class="publication-list">
+      <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 1">
+        <div class="info">
+          <h3>JUDUL JURNAL 1</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="publication-card">
+        <img src="logo_dan_gambar/coverjurnal.jpg" alt="Jurnal Cover 2">
+        <div class="info">
+          <h3>JUDUL JURNAL 2</h3>
+          <p>Published date: dd/mm/yyyy</p>
+          <p>Penulis: Nama Penulis</p>
+          <p>Abstrak: Ringkasan singkat isi jurnal ...</p>
+          <a class="view-btn" href="detail_jurnal.html">view</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+        const headerEl = document.querySelector('.site-header');
+        const contentEl = document.querySelector('.content');
+        const rect = headerEl.getBoundingClientRect();
+        contentEl.style.paddingTop = rect.height + 20 + 'px';
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Workingpaper | Dosen</title>
+
+  <!-- File CSS eksternal -->
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/arsip_detail_workingpaper.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Konten Utama -->
+    <main class="content">
+      <h1>Sistem Workingpaper Teknik Industri</h1>
+      <h2 id="judul">Judul : Lorem ipsum dolor sit amet</h2>
+
+      <section class="form-section">
+        <label>Abstract</label>
+        <textarea id="abstract" readonly>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </textarea>
+      </section>
+
+      <section class="form-section">
+        <label>Afiliasi</label>
+        <textarea id="afliasi" readonly>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec vestibulum leo.
+        </textarea>
+      </section>
+
+      <section class="form-section">
+        <label>Referensi</label>
+        <textarea id="referensi" readonly>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at nisl vel nisl cursus lacinia.
+        </textarea>
+      </section>
+
+      <section class="form-section">
+        <label>File</label>
+        <button id="file-btn" class="file-btn">📄 Lihat File</button>
+      </section>
+
+      <section class="form-section">
+        <label>Komentar Reviewer</label>
+        <textarea id="komentar" readonly>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reviewer memberikan saran untuk memperbaiki struktur penelitian.
+        </textarea>
+      </section>
+
+      <section class="form-section">
+        <label>Status</label>
+        <span class="status rejected">Rejected</span>
+      </section>
+
+      <section class="form-section">
+        <label>Balas Komentar</label>
+        <textarea id="balasKomentar" placeholder="Masukkan balasan komentar di sini..."></textarea>
+      </section>
+
+      <section class="form-section">
+        <label>Update Workingpaper</label>
+        <input type="file" id="uploadFile" />
+      </section>
+
+      <button class="submit-btn" id="submitBtn">✔ Submit</button>
+    </main>
+  </div>
+
+  <!-- File JavaScript -->
+  <script>
+    // --- Load Sidebar ---
+    fetch("sidebar_mahasiswa.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("sidebar").innerHTML = html);
+
+    // --- Tombol Lihat File ---
+    document.getElementById("file-btn").addEventListener("click", () => {
+      window.open("file/contoh-workingpaper.pdf", "_blank");
+    });
+
+    // --- Submit Balasan ---
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      const balasKomentar = document.getElementById("balasKomentar").value.trim();
+      const file = document.getElementById("uploadFile").value;
+
+      if (!balasKomentar) {
+        alert("Silakan isi balasan komentar terlebih dahulu!");
+        return;
+      }
+
+      if (!file) {
+        alert("Silakan unggah file revisi workingpaper!");
+        return;
+      }
+
+      alert("Workingpaper berhasil diperbarui!");
+      window.location.href = "arsip_workingpaper.html";
+    });
+  </script>
+</body>
+</html>

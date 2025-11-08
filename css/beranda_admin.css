@@ -1,0 +1,70 @@
+/* Layout umum */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
+  margin-left: 250px;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Konten utama */
+.main-content {
+  flex: 1;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #111;
+  margin: 10px 0 40px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+/* Layout dua grafik */
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+/* Card statistik */
+.chart-card {
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px; /* Batasi lebar agar chart tidak melebar terus */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3;  /* 👈 Tambahan penting agar tidak gepeng */
+  max-height: 320px;    /* Batas tinggi maksimum */
+}

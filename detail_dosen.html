@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Dosen | Workingpaper Teknik Industri</title>
+  <link rel="stylesheet" href="css/detail_dosen.css">
+</head>
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Konten utama -->
+  <main class="profile-container">
+    <!-- Bagian Profil -->
+    <div class="profile-header">
+      <img src="logo_dan_gambar/fotodosen.jpg" alt="Foto Dosen" class="profile-img">
+      <div class="profile-info">
+        <h2>NAMA DOSEN</h2>
+        <p><strong>NIP:</strong> 2301220211</p>
+        <p><strong>Bidang Keahlian:</strong> Sistem Informasi dan Enterprise</p>
+      </div>
+    </div>
+
+    <!-- Bagian Tabel -->
+    <div class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Judul Karya</th>
+            <th>Tahun</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2023</td>
+            <td>
+              <button class="btn-detail">
+                <a href="detail_jurnal.html">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail"></a>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2023</td>
+            <td>
+              <button class="btn-detail">
+                <a href="detail_jurnal.html">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+                </a>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2024</td>
+            <td>
+              <button class="btn-detail">
+                <a href="detail_jurnal.html">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+                </a>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>2025</td>
+            <td>
+              <button class="btn-detail">
+                <img src="logo_dan_gambar/forward_button.png" alt="Detail">
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Panggil header -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

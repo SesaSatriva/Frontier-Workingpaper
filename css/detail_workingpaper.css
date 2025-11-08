@@ -1,0 +1,202 @@
+/* =======================
+   DETAIL WORKINGPAPER
+   ======================= */
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #222;
+}
+
+/* Konten utama */
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 40px; /* jarak agar tidak menabrak header */
+  box-sizing: border-box;
+}
+
+/* -----------------------
+   HEADER WORKINGPAPER
+-------------------------*/
+.workingpaper-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cover-workingpaper {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+.workingpaper-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.workingpaper-info h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #000;
+}
+
+.workingpaper-info p {
+  margin: 4px 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.workingpaper-info h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* -----------------------
+   ARTIKEL
+-------------------------*/
+.artikel-section h2 {
+  margin-top: 30px;
+  font-size: 20px;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.artikel-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #fafafa;
+}
+
+.artikel-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.artikel-info p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.artikel-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.artikel-meta img {
+  width: 20px;                 
+  vertical-align: middle;/* Menjaga proporsi gambar */
+}
+
+.pdf-btn {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: #ffcc00;
+  color: #000;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.pdf-btn:hover {
+  background-color: #ffdb4d;
+}
+
+/* -----------------------
+   INDEKSASI
+-------------------------*/
+.indeks-section h2 {
+  margin-top: 40px;
+  font-size: 20px;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.indeks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.indeks-container img {
+  height: 45px;
+  width: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 6px 10px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.indeks-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+/* -----------------------
+   TOMBOL KEMBALI
+-------------------------*/
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+}
+
+.back-btn:hover {
+  color: #000;
+}
+
+/* -----------------------
+   RESPONSIVE
+-------------------------*/
+@media (max-width: 768px) {
+  .workingpaper-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cover-workingpaper {
+    width: 70%;
+  }
+
+  .workingpaper-info {
+    text-align: center;
+  }
+
+  .artikel-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .artikel-meta {
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+}

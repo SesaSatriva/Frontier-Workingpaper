@@ -1,0 +1,119 @@
+/* === RESET DASAR === */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+}
+
+/* === LAYOUT UTAMA === */
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* === SIDEBAR === */
+#sidebar {
+  width: 200px;
+  background-color: #ffff;
+  flex-shrink: 0;
+}
+
+/* === AREA KONTEN === */
+.content {
+  flex: 1;
+  background-color: #fff;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 !important;          /* Pastikan siku di tepi kanan */
+  margin: 0 !important;
+}
+
+/* Hilangkan semua kemungkinan radius di area luar */
+.layout,
+.main-content,
+.content,
+.content::before,
+.content::after {
+  border-radius: 0 !important;
+}
+
+/* === JUDUL HALAMAN === */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* === TABEL === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #ffcc00;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* === STATUS STYLE === */
+.status {
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px; /* Membulat hanya di status */
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.approved { background: #7cff55; color: #000; }
+.published { background: #00e1ff; color: #000; }
+.updated { background: #cc00ff; color: #fff; }
+.rejected { background: #ff4444; color: #fff; }
+
+/* === TOMBOL DETAIL === */
+.btn-detail {
+  background-color: #00e1ff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Membulat hanya di tombol detail */
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-detail:hover {
+  background-color: #00b6cc;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

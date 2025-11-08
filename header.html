@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="css/header.css">
+
+<header class="navbar">
+  <!-- LOGO + TEKS -->
+  <div class="logo-container">
+    <img src="logo_dan_gambar/logouny.png" alt="Logo" class="logo">
+    <div class="logo-text">
+      <h2>Workingpaper</h2>
+      <p>Teknik Industri</p>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <nav>
+    <a href="beranda.html" class="menu-item" id="menu-beranda">
+      <img src="logo_dan_gambar/homepage.png" alt="Home" class="menu-icon">
+      <span>Beranda</span>
+    </a>
+    <a href="jurnal.html" class="menu-item" id="menu-jurnal">
+      <img src="logo_dan_gambar/repository.png" alt="Jurnal" class="menu-icon">
+      <span>Jurnal & Workingpaper</span>
+    </a>
+    <a href="dosen.html" class="menu-item" id="menu-dosen">
+      <img src="logo_dan_gambar/Dosen.png" alt="Dosen" class="menu-icon">
+      <span>Dosen</span>
+    </a>
+    <a href="mahasiswa.html" class="menu-item" id="menu-mahasiswa">
+      <img src="logo_dan_gambar/Mahasiswa.png" alt="Mahasiswa" class="menu-icon">
+      <span>Mahasiswa</span>
+    </a>
+  </nav>
+
+  <!-- LOGIN -->
+  <button class="login-btn">
+    <a href="login.html" class="menu-item">
+    Login
+    </a>
+  </button>
+</header>
+
+<script>
+  // Menandai menu aktif berdasarkan halaman yang sedang dibuka
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".menu-item").forEach(link => {
+    const page = link.getAttribute("href");
+    if (currentPage === page) {
+      link.classList.add("active");
+    }
+  });
+</script>

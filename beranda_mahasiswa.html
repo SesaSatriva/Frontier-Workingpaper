@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda Mahasiswa - Workingpaper Teknik Industri</title>
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/beranda.css">
+</head>
+<body>
+  <div id="sidebar"></div>
+
+  <main class="main-content">
+    <h1>Sistem Workingpaper Teknik Industri</h1>
+
+    <div class="content-container">
+      <!-- Kolom Kiri: Biodata -->
+      <div class="biodata-section">
+        <div class="biodata-buttons">
+          <button class="active">Biodata</button>
+          <button>Update Biodata</button>
+        </div>
+
+        <div class="biodata-card">
+          <h3>Mahasiswa</h3>
+          <p><b>Sesa Nugroho Satriva</b></p>
+          <p>NIM: 23051430031</p>
+          <img src="logo_dan_gambar/fotomahasiswa.JPG" alt="Mahasiswa" class="biodata-img">
+          <p>Teknik Industri<br>Angkatan 2023</p>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Statistik -->
+      <div class="statistik-section">
+        <h3>Statistik Workingpaper</h3>
+        <canvas id="chart"></canvas>
+        <ul>
+          <li>Published: 9</li>
+          <li>Draft: 5</li>
+          <li>Waiting reviewer: 2</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Panggil header mahasiswa
+    fetch('sidebar_mahasiswa.html')
+      .then(res => res.text())  
+      .then(data => 
+        document.getElementById('sidebar').innerHTML = data);
+
+    // Chart Pie Statistik
+    const ctx = document.getElementById('chart');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Published', 'Draft', 'Waiting Reviewer'],
+        datasets: [{
+          data: [9, 5, 2],
+          backgroundColor: ['#FFB703', '#FB8500', '#8ECAE6']
+        }]
+      },
+      options: {
+        plugins: { legend: { position: 'bottom' } }
+      }
+    });
+  </script>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

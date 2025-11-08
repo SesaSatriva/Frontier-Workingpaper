@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Registrasi - Sistem Workingpaper</title>
+  <link rel="stylesheet" href="css/data_registrasi.css">
+
+  <!-- Panggil sidebar -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("sidebar_admin.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("sidebar").innerHTML = data;
+        });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Konten utama -->
+    <main class="main-content">
+      <h1 class="page-title">Sistem Workingpaper Teknik Industri</h1>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Data Email</th>
+              <th>Verifikasi</th>
+              <th>Tolak</th>
+              <th>Submit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+              <td><input type="checkbox" class="check verifikasi"></td>
+              <td><input type="checkbox" class="check tolak"></td>
+              <td><a href="#"><img src="logo_dan_gambar/forward_button.png" alt="Submit" class="icon-btn"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Script untuk aturan checkbox -->
+  <script>
+    // Ambil semua baris tabel
+    document.querySelectorAll("tbody tr").forEach((row) => {
+      const verif = row.querySelector(".verifikasi");
+      const tolak = row.querySelector(".tolak");
+
+      // Jika verifikasi dicentang → tolak dinonaktifkan
+      verif.addEventListener("change", () => {
+        if (verif.checked) tolak.checked = false;
+      });
+
+      // Jika tolak dicentang → verifikasi dinonaktifkan
+      tolak.addEventListener("change", () => {
+        if (tolak.checked) verif.checked = false;
+      });
+    });
+  </script>
+  <style>
+    #sidebar ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>
